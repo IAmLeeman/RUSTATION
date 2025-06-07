@@ -1,5 +1,9 @@
+// RUSTATION //
+// SUPAHAXOR // 07/06/2025 //
+// main.rs //
 
 use std::{thread, time::Duration};
+// This program is horribly innacurate, but it is a start
 
 fn main() {
     
@@ -18,4 +22,6 @@ fn main() {
 
 
     }
+    // Please tell me this is a joke?
+    // Yeah, of course it is. I'll sort an actual 60Hz loop later.
 }
