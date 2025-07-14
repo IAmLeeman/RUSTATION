@@ -1,5 +1,5 @@
 // RUSTATION //
-// SUPAHAXOR // 07/06/2025 //
+// SUPAHAXOR // 14/07/2025 //
 // main.rs //
 
 use std::{thread, time::Duration};
@@ -16,8 +16,8 @@ fn main() -> Result<()> {
 
     env_logger::init();
     let bios = bios::load_bios("SCPH1001.BIN")?;
-    let mut memory = memory::Memory::new(bios);
-    let mut cpu = cpu::CPU::new();
+    //let mut memory = memory::Memory::new(bios);
+    //let mut cpu = cpu::CPU::new();
     
     let mut clock_cycle = 0;
     let max_clock_cycles = 100000;
@@ -36,4 +36,5 @@ fn main() -> Result<()> {
     println!("Clock cycles completed: {}", clock_cycle);
     // Please tell me this is a joke?
     // Yeah, of course it is. I'll sort an actual 60Hz loop later.
-}
+    Ok(())
+}        
