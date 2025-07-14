@@ -5,7 +5,19 @@
 use std::{thread, time::Duration};
 // This program is horribly innacurate, but it is a start
 
-fn main() {
+mod cpu;
+mod memory;
+mod bus;
+mod bios;
+
+use anyhow::Result;
+
+fn main() -> Result<()> {
+
+    env_logger::init();
+    let bios = bios::load_bios("SCPH1001.BIN")?;
+    let mut memory = memory::Memory::new(bios);
+    let mut cpu = cpu::CPU::new();
     
     let mut clock_cycle = 0;
     let max_clock_cycles = 100000;
@@ -20,8 +32,8 @@ fn main() {
         }
         clock_cycle += 1;
 
-
     }
+    println!("Clock cycles completed: {}", clock_cycle);
     // Please tell me this is a joke?
     // Yeah, of course it is. I'll sort an actual 60Hz loop later.
 }
