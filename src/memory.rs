@@ -14,6 +14,13 @@ pub struct Memory {
     data: Vec<u8>
     // Add other mapped regions as necessary
 }
+impl Memory {
+    pub fn new(size: usize) -> Self {
+        Self {
+            data: vec![0; size],
+        }
+    }
+}
 
 impl MemoryRead for Memory {
 

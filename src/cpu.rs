@@ -19,6 +19,20 @@ impl CPU {
         self.pc = self.pc.wrapping_add(4);
         self.execute(instr);
     }
-
+    fn execute(&mut self, instr: u32) {
+        
+        let opcode  = (instr >> 26) & 0x3f;
+        match opcode {
+           0x00 => self.execute_special(instr),
+           _=> {
+           println("unknown opcode: {:02X}", opcode);
+        }
+    }
+    fn execute_special(&mut self, instr: u32){
+        let funct = instr & 0x3f;
+        match funct {
+            
+        }
+    } 
 
 }
