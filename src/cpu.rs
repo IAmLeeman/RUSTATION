@@ -1,4 +1,5 @@
 use crate::memory::MemoryRead;
+use crate::opcodes::execute;
 
 pub struct CPU {
     pub pc: u32,
@@ -31,7 +32,7 @@ impl CPU {
     fn execute_special(&mut self, instr: u32){
         let funct = instr & 0x3f;
         match funct {
-            
+
         }
     } 
 
